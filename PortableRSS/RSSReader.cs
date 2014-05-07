@@ -10,12 +10,17 @@ namespace PortableRSS
     public static class RSSReader
     {
 
+        /// <summary>
+        /// Parse RSS feed
+        /// </summary>
+        /// <param name="url">Feed url</param>
+        /// <returns>RSSChannel</returns>
         public static RSSChannel Get(string url)
         {
             RSSChannel channel = new RSSChannel();
 
             try
-            {
+            { 
                 var ch = XElement.Load(url).Elements("channel");
                 //Let's parse the channel information
                 var chan = ch.Elements().Where(m => m.Name.LocalName.ToLower() != "item");
