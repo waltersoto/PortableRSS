@@ -1,14 +1,9 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace PortableRSS
-{
-    public class RSSChannel
-    {
-        public RSSChannel()
-        {
+namespace PortableRSS {
+    public class RSSChannel {
+        public RSSChannel() {
             Image = new RSSImage();
             Items = new List<RSSItem>();
         }
@@ -18,7 +13,7 @@ namespace PortableRSS
         public string Description { set; get; }
 
         public string Language { set; get; }
-        public string Copyright { set; get; } 
+        public string Copyright { set; get; }
         public string PubDate { set; get; }
         public string LastBuildDate { set; get; }
         public string Category { set; get; }

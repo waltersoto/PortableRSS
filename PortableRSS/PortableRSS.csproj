@@ -36,11 +36,51 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Geo\Gml\Corner.cs" />
+    <Compile Include="Geo\Gml\Envelope.cs" />
+    <Compile Include="Geo\Gml\Exterior.cs" />
+    <Compile Include="Geo\Gml\LinearRing.cs" />
+    <Compile Include="Geo\Gml\LineString.cs" />
+    <Compile Include="Geo\Gml\Point.cs" />
+    <Compile Include="Geo\Gml\Polygon.cs" />
+    <Compile Include="Geo\Gml\Pos.cs" />
+    <Compile Include="Geo\Gml\PosList.cs" />
+    <Compile Include="Geo\Point.cs" />
+    <Compile Include="Geo\Where.cs" />
+    <Compile Include="Media\BackLinks.cs" />
+    <Compile Include="Media\Category.cs" />
+    <Compile Include="Media\Comments.cs" />
+    <Compile Include="Media\Community.cs" />
+    <Compile Include="Media\Copyright.cs" />
+    <Compile Include="Media\Credit.cs" />
+    <Compile Include="Media\Description.cs" />
+    <Compile Include="Media\Embed.cs" />
+    <Compile Include="Media\Hash.cs" />
+    <Compile Include="Media\Keywords.cs" />
+    <Compile Include="Media\License.cs" />
+    <Compile Include="Media\Param.cs" />
+    <Compile Include="Media\PeerLink.cs" />
+    <Compile Include="Media\Player.cs" />
+    <Compile Include="Media\Price.cs" />
+    <Compile Include="Media\Rating.cs" />
+    <Compile Include="Media\Responses.cs" />
+    <Compile Include="Media\Restriction.cs" />
+    <Compile Include="Media\Rights.cs" />
+    <Compile Include="Media\Scene.cs" />
+    <Compile Include="Media\StartRating.cs" />
+    <Compile Include="Media\Statistics.cs" />
+    <Compile Include="Media\Status.cs" />
+    <Compile Include="Media\SubTitle.cs" />
+    <Compile Include="Media\Tag.cs" />
+    <Compile Include="Media\Text.cs" />
+    <Compile Include="Media\Thumbnail.cs" />
+    <Compile Include="Media\Title.cs" />
     <Compile Include="RSSChannel.cs" />
     <Compile Include="RSSEnclosure.cs" />
     <Compile Include="RSSImage.cs" />
     <Compile Include="RSSItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Media\Content.cs" />
     <Compile Include="RSSReader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

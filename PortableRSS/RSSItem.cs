@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
 
-namespace PortableRSS
-{
-    public class RSSItem
-    {
-        public RSSItem()
-        {
+using System.Collections.Generic;
+using PortableRSS.Media;
+
+namespace PortableRSS {
+    public class RSSItem {
+        public RSSItem() {
             Enclosure = new RSSEnclosure();
+            Content = new List<Content>();
         }
 
         public string Title { set; get; }
@@ -19,7 +17,8 @@ namespace PortableRSS
         public string Category { set; get; }
         public string Comments { set; get; }
         public RSSEnclosure Enclosure { set; get; }
-        public string PubDate{ set; get; }
+        public IList<Content> Content { set; get; }
+        public string PubDate { set; get; }
         public string Guid { set; get; }
         public string Source { set; get; }
 
