@@ -1,14 +1,15 @@
 ﻿
 
 using System.Collections.Generic;
+using PortableRSS.Media.Interfaces;
 
 namespace PortableRSS.Media {
 
-    public class Community {
+    public class Community : ICommunity {
 
-        public StartRating StartRating { set; get; }
-        public Statistics Statistics { set; get; }
-        public IList<Tag> Tags { set; get; }
+        public IStartRating StartRating { set; get; }
+        public IStatistics Statistics { set; get; }
+        public IList<ITag> Tags { set; get; }
 
     }
 }

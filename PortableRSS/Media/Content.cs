@@ -1,6 +1,8 @@
-﻿namespace PortableRSS.Media {
+﻿using PortableRSS.Media.Interfaces;
 
-    public class Content {
+namespace PortableRSS.Media {
+
+    public class Content : IContent {
         public string Url { set; get; }
         public string FileSize { set; get; }
         public string Type { set; get; }

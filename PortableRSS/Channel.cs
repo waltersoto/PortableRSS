@@ -1,11 +1,13 @@
 ﻿
+using System;
 using System.Collections.Generic;
+using PortableRSS.Interfaces;
 
 namespace PortableRSS {
-    public class RSSChannel {
-        public RSSChannel() {
-            Image = new RSSImage();
-            Items = new List<RSSItem>();
+    public class Channel : IChannel {
+        public Channel() {
+            Image = new Image();
+            Items = new List<IItem>();
         }
 
         public string Title { set; get; }
@@ -19,9 +21,8 @@ namespace PortableRSS {
         public string Category { set; get; }
         public string Generator { set; get; }
         public string TTL { set; get; }
-        public RSSImage Image { set; get; }
-
-        public List<RSSItem> Items { set; get; }
+        public IImage Image { set; get; }
+        public IList<IItem> Items { set; get; }
 
     }
 }

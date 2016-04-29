@@ -3,10 +3,11 @@ using System;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Xml.Linq;
+using PortableRSS.Interfaces;
 using PortableRSS.Media;
 
 namespace PortableRSS {
-    public static class RSSReader {
+    public static class Reader {
 
         private static bool IsMedia(XName name) {
             const string MediaNamespace = "http://search.yahoo.com/mrss/";
@@ -18,9 +19,9 @@ namespace PortableRSS {
         /// </summary>
         /// <param name="url">Feed url</param>
         /// <returns>RSSChannel</returns>
-        public static RSSChannel Get(string url) {
+        public static IChannel Get(string url) {
 
-            var channel = new RSSChannel();
+            var channel = new Channel();
 
             var ch = XElement.Load(url).Elements("channel").FirstOrDefault();
 
@@ -75,7 +76,7 @@ namespace PortableRSS {
             var items = ch.Elements().Where(m => m.Name.LocalName.ToLower() == "item");
 
             foreach (var item in items) {
-                var entry = new RSSItem();
+                var entry = new Item();
 
                 foreach (var i in item.Elements()) {
                     if (IsMedia(i.Name)) {
@@ -172,7 +173,7 @@ namespace PortableRSS {
                                 break;
                             case "enclosure":
                                 if (i.HasAttributes) {
-                                    var en = new RSSEnclosure();
+                                    var en = new Enclosure();
                                     if (i.Attribute("url") != null) {
                                         en.Url = i.Attribute("url").Value;
                                     }

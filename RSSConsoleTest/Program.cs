@@ -9,17 +9,17 @@ namespace RSSConsoleTest {
 
             string feed = "http://news.yahoo.com/rss/";
 
-            var ch = RSSReader.Get(feed);
+            var ch = Reader.Get(feed);
 
             Console.WriteLine(ch.Title);
             Console.WriteLine("=========================");
             Console.WriteLine();
-            ch.Items.ForEach(x => {
+
+            ch.Items.ToList().ForEach(x => {
                 Console.WriteLine(" -> {0}", x.Title);
-                if (x.Content.Any()) {
-                    foreach (var m in x.Content) {
-                        Console.WriteLine(" -> -> {0} {1}", m.Type, m.Url);
-                    }
+                if (!x.Content.Any()) return;
+                foreach (var m in x.Content) {
+                    Console.WriteLine(" -> -> {0} {1}", m.Type, m.Url);
                 }
             });
 

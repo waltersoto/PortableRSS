@@ -1,6 +1,8 @@
 ﻿
+using PortableRSS.Media.Interfaces;
+
 namespace PortableRSS.Media {
-    public class Text {
+    public class Text : IText {
         public string Type { set; get; }
         public string Lang { set; get; }
         public string Start { set; get; }
