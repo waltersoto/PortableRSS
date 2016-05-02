@@ -1,10 +1,15 @@
 ﻿
 using System;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 using PortableRSS.Interfaces;
 using PortableRSS.Media;
+using System.Net.Http;
 
 namespace PortableRSS {
     public static class Reader {
@@ -14,16 +19,36 @@ namespace PortableRSS {
             return name.NamespaceName.Equals(MediaNamespace, StringComparison.OrdinalIgnoreCase);
         }
 
+        public static async Task<IChannel> GetAsync(string url) {
+
+            HttpResponseMessage httpResponse;
+
+            using (var client = new HttpClient()) {
+                httpResponse = await client.GetAsync(url);
+            }
+
+
+            var txt = "";
+            if (httpResponse != null) {
+                txt = await httpResponse.Content.ReadAsStringAsync();
+            }
+            var ch = XElement.Load(new StringReader(txt));
+            return Get(ch);
+        }
+
         /// <summary>
         /// Parse RSS feed
         /// </summary>
         /// <param name="url">Feed url</param>
         /// <returns>RSSChannel</returns>
         public static IChannel Get(string url) {
+            var ch = XElement.Load(url);
+            return Get(ch);
+        }
 
+
+        private static IChannel Get(XElement ch) {
             var channel = new Channel();
-
-            var ch = XElement.Load(url).Elements("channel").FirstOrDefault();
 
             //Let's parse the channel information
             var chan = ch.Elements().FirstOrDefault(m => m.Name.LocalName.ToLower() != "item");
@@ -73,7 +98,7 @@ namespace PortableRSS {
             #endregion
 
             //Let's parse the items
-            var items = ch.Elements().Where(m => m.Name.LocalName.ToLower() == "item");
+            var items = ch.Elements("channel").Elements().Where(m => m.Name.LocalName.ToLower() == "item");
 
             foreach (var item in items) {
                 var entry = new Item();
