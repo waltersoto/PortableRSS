@@ -5,10 +5,32 @@ using PortableRSS.Media.Interfaces;
 namespace PortableRSS.Media {
     public class Media : IMedia {
 
+        public Media() {
+            Content = new List<IContent>();
+            Ratings = new List<IRating>();
+            Keywords = new List<string>();
+            Thumbnails = new List<IThumbnail>();
+            Categories = new List<ICategory>();
+            Hashes = new List<IHash>();
+            Credits = new List<ICredit>();
+            Texts = new List<IText>();
+            Restrictions = new List<IRestriction>();
+            Comments = new List<string>();
+            Embeds = new List<IEmbed>();
+            Responses = new List<string>();
+            BackLinks = new List<string>();
+            Statuses = new List<IStatus>();
+            Prices = new List<IPrice>();
+            SubTitles = new List<ISubTitle>();
+            PeerLinks = new List<IPeerLink>();
+            Rights = new List<string>();
+            Scenes = new List<IScene>();
+        }
+
         public IList<IContent> Content { set; get; }
         public IList<IRating> Ratings { set; get; }
-        public ITitle Title { set; get; }
-        public IDescription Description { set; get; }
+        public IGenericContent Title { set; get; }
+        public IGenericContent Description { set; get; }
         public IList<string> Keywords { set; get; }
         public IList<IThumbnail> Thumbnails { set; get; }
         public IList<ICategory> Categories { set; get; }

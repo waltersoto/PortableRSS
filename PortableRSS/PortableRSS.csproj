@@ -44,6 +44,7 @@
     <Compile Include="Geo\Gml\PosList.cs" />
     <Compile Include="Geo\Point.cs" />
     <Compile Include="Geo\Where.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Interfaces\IChannel.cs" />
     <Compile Include="Interfaces\IEnclosure.cs" />
     <Compile Include="Interfaces\IImage.cs" />
@@ -53,7 +54,6 @@
     <Compile Include="Media\Community.cs" />
     <Compile Include="Media\Copyright.cs" />
     <Compile Include="Media\Credit.cs" />
-    <Compile Include="Media\Description.cs" />
     <Compile Include="Media\Embed.cs" />
     <Compile Include="Media\Hash.cs" />
     <Compile Include="Media\Interfaces\ICategory.cs" />
@@ -61,11 +61,11 @@
     <Compile Include="Media\Interfaces\IContent.cs" />
     <Compile Include="Media\Interfaces\ICopyright.cs" />
     <Compile Include="Media\Interfaces\ICredit.cs" />
-    <Compile Include="Media\Interfaces\IDescription.cs" />
     <Compile Include="Media\Interfaces\IEmbed.cs" />
     <Compile Include="Media\Interfaces\IHash.cs" />
     <Compile Include="Media\Interfaces\ILicense.cs" />
     <Compile Include="Media\Interfaces\IMedia.cs" />
+    <Compile Include="Media\Interfaces\IMediaReader.cs" />
     <Compile Include="Media\Interfaces\IParam.cs" />
     <Compile Include="Media\Interfaces\IPeerLink.cs" />
     <Compile Include="Media\Interfaces\IPlayer.cs" />
@@ -80,9 +80,10 @@
     <Compile Include="Media\Interfaces\ITag.cs" />
     <Compile Include="Media\Interfaces\IText.cs" />
     <Compile Include="Media\Interfaces\IThumbnail.cs" />
-    <Compile Include="Media\Interfaces\ITitle.cs" />
+    <Compile Include="Media\Interfaces\IGenericContent.cs" />
     <Compile Include="Media\License.cs" />
     <Compile Include="Media\Media.cs" />
+    <Compile Include="Media\MediaReader.cs" />
     <Compile Include="Media\Param.cs" />
     <Compile Include="Media\PeerLink.cs" />
     <Compile Include="Media\Player.cs" />
@@ -97,7 +98,7 @@
     <Compile Include="Media\Tag.cs" />
     <Compile Include="Media\Text.cs" />
     <Compile Include="Media\Thumbnail.cs" />
-    <Compile Include="Media\Title.cs" />
+    <Compile Include="Media\GenericContent.cs" />
     <Compile Include="Channel.cs" />
     <Compile Include="Enclosure.cs" />
     <Compile Include="Image.cs" />

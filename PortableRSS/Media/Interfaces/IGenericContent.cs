@@ -1,7 +1,7 @@
 ﻿
 
 namespace PortableRSS.Media.Interfaces {
-    public interface ITitle {
+    public interface IGenericContent {
         string Type { set; get; }
         string Value { set; get; }
     }

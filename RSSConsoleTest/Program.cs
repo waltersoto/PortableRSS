@@ -22,9 +22,10 @@ namespace RSSConsoleTest {
 
         static async void Read(string url) {
 
-            var ch = Reader.GetAsync(url);
+            var r = new Reader();
+            var ch = r.Get(url);
             Process();
-            var completed = await ch;
+            var completed = ch;
             Console.WriteLine("{0} ({1})", completed.Title, completed.Items.Count);
 
         }

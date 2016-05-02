@@ -6,8 +6,8 @@ namespace PortableRSS.Media.Interfaces {
     public interface IMedia {
         IList<IContent> Content { set; get; }
         IList<IRating> Ratings { set; get; }
-        ITitle Title { set; get; }
-        IDescription Description { set; get; }
+        IGenericContent Title { set; get; }
+        IGenericContent Description { set; get; }
         IList<string> Keywords { set; get; }
         IList<IThumbnail> Thumbnails { set; get; }
         IList<ICategory> Categories { set; get; }

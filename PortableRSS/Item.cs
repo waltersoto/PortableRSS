@@ -8,7 +8,7 @@ namespace PortableRSS {
     public class Item : IItem {
         public Item() {
             Enclosure = new Enclosure();
-            Content = new List<IContent>();
+            Media = new Media.Media();
         }
 
         public string Title { set; get; }
@@ -18,7 +18,7 @@ namespace PortableRSS {
         public string Category { set; get; }
         public string Comments { set; get; }
         public IEnclosure Enclosure { set; get; }
-        public IList<IContent> Content { set; get; }
+        public IMedia Media { set; get; }
         public string PubDate { set; get; }
         public string Guid { set; get; }
         public string Source { set; get; }

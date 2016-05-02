@@ -12,7 +12,7 @@ namespace PortableRSS.Interfaces {
         string Category { set; get; }
         string Comments { set; get; }
         IEnclosure Enclosure { set; get; }
-        IList<IContent> Content { set; get; }
+        IMedia Media { set; get; }
         string PubDate { set; get; }
         string Guid { set; get; }
         string Source { set; get; }
