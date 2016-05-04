@@ -6,7 +6,7 @@ namespace RSSConsoleTest {
     class Program {
         static void Main() {
 
-            const string Feed = "http://news.yahoo.com/rss/";
+            const string Feed = "http://rss.tvguide.com/breakingnews";
 
             Read(Feed);
 
