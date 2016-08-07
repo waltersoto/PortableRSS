@@ -6,9 +6,9 @@ namespace RSSConsoleTest {
     class Program {
         static void Main() {
 
-            const string Feed = "http://rss.tvguide.com/breakingnews";
+            const string feed = "http://rss.tvguide.com/breakingnews";
 
-            Read(Feed);
+            Read(feed);
 
             Console.ReadLine();
 
