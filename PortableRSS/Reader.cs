@@ -100,7 +100,7 @@ namespace PortableRSS {
             #endregion
 
             //Let's parse the items
-            var items = ch.Elements("channel").Elements().Where(m => m.Name.LocalName.ToLower() == "item");
+            var items = chan.Elements().Where(m => m.Name.LocalName.ToLower() == "item");
 
             foreach (var item in items) {
                 var entry = new Item();
